@@ -9,10 +9,24 @@ export default class Todo {
     this.completed = false;
     this.notes = "";
     this.checklist = [];
+    this.id = crypto.randomUUID();
   }
 
   taskCompleted() {
     this.completed = true;
+  }
+
+  get title() {
+    return this._title;
+  }
+
+  set title(title) {
+    const trimmed = title.trim();
+    if (trimmed) {
+      this._title = trimmed;
+    } else {
+      alert("That is not a valid title");
+    }
   }
 
   get dueDate() {

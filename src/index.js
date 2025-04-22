@@ -1,7 +1,12 @@
 import Todo from "./todo";
+import Project from "./project";
 
-const todo = new Todo("Mask");
+const project = new Project("YES");
 
-todo.priority = "nesto";
+project.addTodo("BRUH");
 
-console.log(todo.priority);
+console.log(project.getTodos());
+
+project.removeTodo(0);
+
+console.log(project.getTodos());
